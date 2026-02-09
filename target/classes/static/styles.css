@@ -1,0 +1,522 @@
+:root{
+  --bg:#f4f1e6;
+  --bg2:#eef5ee;
+  --card:#ffffff;
+  --text:#142015;
+  --muted:#6b7280;
+  --line:rgba(20,32,21,.12);
+  --green:#7ab540;
+  --green2:#1f6b3a;
+  --shadow:0 18px 45px rgba(2,8,23,.10);
+  --shadow2:0 10px 25px rgba(2,8,23,.08);
+  --container:1120px;
+  --font:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --headline:"Gravitas One", system-ui;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--text);
+  background:linear-gradient(180deg,var(--bg2),var(--bg));
+}
+.container{max-width:var(--container); margin:0 auto; padding:0 18px}
+.muted{color:var(--muted)}
+#inicio,#menu,#why,#planes{scroll-margin-top:90px}
+
+/* Topbar */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:rgba(244,241,230,.88);
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(14px) saturate(160%);
+}
+.topbar__inner{display:flex; justify-content:space-between; align-items:center; padding:14px 0}
+.brand{display:flex; gap:10px; align-items:center}
+.brand__mark{
+  width:42px; height:42px; border-radius:14px;
+  background:linear-gradient(135deg,var(--green2),var(--green));
+  color:#fff; font-weight:950;
+  display:grid; place-items:center;
+  box-shadow:var(--shadow2);
+}
+.brand__name{font-weight:950; letter-spacing:.2px}
+.nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.nav a{
+  text-decoration:none; color:var(--text);
+  font-weight:900; font-size:13px;
+  padding:10px 10px; border-radius:12px;
+}
+.nav a:hover{background:rgba(122,181,64,.14)}
+
+/* Botones */
+.btn{
+  border:1px solid var(--line);
+  background:#fff; color:var(--text);
+  padding:12px 16px; border-radius:999px;
+  font-weight:950; text-decoration:none;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.btn--primary{
+  border-color:transparent;
+  color:#fff;
+  background:linear-gradient(135deg,var(--green2),var(--green));
+  box-shadow:var(--shadow2);
+}
+
+/* HERO */
+.heroFoodezza{
+  padding:46px 0 26px;
+  position:relative;
+  overflow:hidden;
+}
+.heroFoodezza:before{
+  content:"";
+  position:absolute;
+  right:-240px; top:-260px;
+  width:700px; height:700px;
+  background:linear-gradient(180deg,var(--green2),var(--green));
+  border-radius:999px;
+  opacity:.95;
+}
+.heroFoodezza__inner{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:24px;
+  align-items:center;
+}
+.heroTitle{
+  margin:0;
+  font-family:var(--headline);
+  font-size:48px;
+  line-height:1.05;
+}
+.heroBrandSmall{
+  font-family:var(--font);
+  font-weight:950;
+  color:var(--green2);
+}
+.heroText{
+  margin:14px 0 0;
+  color:var(--muted);
+  font-weight:650;
+  line-height:1.7;
+  max-width:65ch;
+}
+.heroKicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.85);
+  border:1px solid var(--line);
+  box-shadow: var(--shadow2);
+  font-weight:950;
+  letter-spacing:.2px;
+}
+.heroChips{
+  margin-top:16px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+.heroChip{
+  padding:10px 12px;
+  border-radius:999px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid var(--line);
+  font-weight: 950;
+  font-size: 13px;
+  color: var(--green2);
+  box-shadow: var(--shadow2);
+}
+.heroRight{
+  position:relative;
+  min-height:380px;
+  display:grid;
+  place-items:center;
+}
+.heroPanel{
+  width:min(520px, 96%);
+  background:rgba(255,255,255,.70);
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:16px;
+}
+.heroPanel--glass{
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(255,255,255,.60);
+  backdrop-filter: blur(12px);
+}
+.heroImageWrap{
+  width:100%;
+  aspect-ratio: 16/10;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  background:rgba(0,0,0,.08);
+}
+.heroImageWrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.heroMiniRow{
+  margin-top:12px;
+  display:flex; gap:6px;
+  justify-content:center;
+}
+.dot{
+  width:9px;
+  height:9px;
+  border-radius:999px;
+  background: rgba(20,32,21,.20);
+  display:inline-block;
+}
+.dot--active{
+  width:22px;
+  border-radius:999px;
+  background: rgba(122,181,64,.70);
+}
+
+/* Secciones */
+.section{padding:44px 0}
+.sectionSoft{background:rgba(255,255,255,.55); border-top:1px solid var(--line)}
+.sectionHead{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap}
+.sectionHead h2{margin:0; font-size:30px; letter-spacing:-.4px}
+
+/* Menú */
+.menuGrid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+}
+.menuItem{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:var(--shadow2);
+  padding:14px;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.menuItem:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+.menuThumb{
+  width:100%;
+  height:130px;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(122,181,64,.12);
+}
+.menuThumb img{width:100%; height:100%; object-fit:cover}
+.menuName{margin-top:10px; font-weight:950}
+.menuDesc{margin:6px 0 0; color:var(--muted); font-weight:650; line-height:1.45; font-size:13px; min-height:40px}
+.menuBottom{display:flex; justify-content:space-between; align-items:center; margin-top:12px}
+.chip{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:7px 10px;
+  font-weight:950;
+  font-size:12px;
+  background:#fff;
+}
+.chip--green{border-color:transparent; background:rgba(122,181,64,.18); color:var(--green2)}
+
+/* WHY */
+.centerTitle{text-align:center; font-size:34px; margin:0 0 18px; letter-spacing:-.4px; text-transform:uppercase}
+.whyGrid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px}
+.whyCard{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:var(--shadow2);
+  padding:18px;
+  text-align:center;
+}
+.whyIcon{
+  width:56px; height:56px;
+  border-radius:18px;
+  background:rgba(122,181,64,.16);
+  margin:0 auto;
+  display:grid; place-items:center;
+  font-size:22px;
+}
+.whyTitle{margin-top:12px; font-weight:950}
+.whyText{margin-top:8px; color:var(--muted); font-weight:650; line-height:1.55}
+
+/* Ready */
+.readyBlock{
+  margin-top: 28px;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow2);
+  text-align: center;
+}
+.readyBlock h3{ margin: 0 0 6px; font-weight: 950; }
+.readyBlock p{ margin: 0 0 14px; color: var(--muted); font-weight: 650; }
+
+/* ✅ PLANES por edad */
+.ageGrid{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+.ageCard{
+  border-radius:26px;
+  padding:18px;
+  background:linear-gradient(180deg, rgba(122,181,64,.18), rgba(255,255,255,.95));
+  border:1px solid rgba(20,32,21,.10);
+  box-shadow:var(--shadow2);
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.ageCard:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+.ageCircle{
+  width:120px;
+  height:120px;
+  border-radius:999px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(20,32,21,.10);
+  box-shadow:var(--shadow2);
+}
+.ageCircle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.ageSmall{
+  margin-top:10px;
+  color:rgba(20,32,21,.55);
+  font-weight:900;
+  font-size:12px;
+}
+.ageName{
+  margin-top:8px;
+  font-weight:950;
+  font-size:18px;
+}
+.ageDesc{
+  margin-top:8px;
+  color:var(--muted);
+  font-weight:650;
+  line-height:1.45;
+  font-size:13px;
+  min-height:38px;
+}
+.agePlus{
+  margin-top:12px;
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  font-weight:950;
+  color:#fff;
+  background:linear-gradient(135deg,var(--green2),var(--green));
+  box-shadow:var(--shadow2);
+}
+
+/* ✅ MODAL (imagen recortada bonito) */
+.modal{position:fixed; inset:0; display:none; z-index:40}
+.modal[aria-hidden="false"]{display:block}
+.modal__backdrop{position:absolute; inset:0; background:rgba(0,0,0,.46)}
+.modal__panel{
+  position:relative;
+  margin:4.5vh auto 0;
+  width:min(980px, 92vw);
+  border-radius:28px;
+  border:1px solid var(--line);
+  background:#fff;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+}
+.modal__close{
+  position:absolute; top:12px; right:12px;
+  width:40px; height:40px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:#fff;
+  font-weight:950;
+  cursor:pointer;
+}
+.modal__media{
+  padding:18px;
+  background:rgba(122,181,64,.16);
+  display:flex;
+}
+.modal__plate{
+  width:100%;
+  height:100%;
+}
+.modal__plate img{
+  width:100%;
+  height:100%;
+  min-height:360px;
+  object-fit:cover;
+  object-position:center;
+  border-radius:22px;
+  display:block;
+  box-shadow:var(--shadow2);
+  border:1px solid rgba(20,32,21,.10);
+}
+
+.modal__body{padding:18px}
+.badge{
+  font-weight:950;
+  font-size:12px;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(122,181,64,.18);
+  color:var(--green2);
+  display:inline-block;
+}
+.meta{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
+.meta span{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:7px 10px;
+  font-weight:950;
+  font-size:12px;
+}
+.modal__title{margin:10px 0 6px; font-size:20px; font-weight:950}
+.modal__goal{margin:0; color:var(--muted); font-weight:650; line-height:1.55}
+.modal__h{margin:14px 0 8px; font-weight:950}
+.modal__list{margin:0; padding-left:18px; color:rgba(20,32,21,.86); font-weight:650}
+.modal__list li{margin:8px 0}
+.modal__footer{display:flex; justify-content:flex-end; margin-top:16px}
+
+/* Footer */
+.footer{border-top:1px solid var(--line); padding:18px 0; background:rgba(255,255,255,.70)}
+.footer__inner{display:flex; justify-content:space-between; align-items:center; font-weight:900}
+
+/* Responsive */
+@media (max-width: 980px){
+  .heroFoodezza__inner{grid-template-columns:1fr}
+  .heroFoodezza:before{right:auto; left:35%; top:-320px}
+  .heroRight{min-height:320px}
+  .menuGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .whyGrid{grid-template-columns:1fr}
+  .ageGrid{grid-template-columns:1fr}
+  .modal__panel{grid-template-columns:1fr}
+}
+@media (max-width: 640px){
+  .heroTitle{font-size:40px}
+  .menuGrid{grid-template-columns:1fr}
+}
+/* ================================
+   SOLO LOS 3 CUADROS DE PLANES
+   ================================ */
+
+/* Fondo del área planes (si lo quieres blanco, déjalo así) */
+#planes{
+  background:#fff;
+}
+
+/* 1) PRIMER CUADRO → VERDE (como el del hero) */
+#planes .ageGrid .ageCard:nth-child(1){
+  background:#7ab540;          /* verde claro de tu :root */
+  border-color: rgba(0,0,0,.08);
+}
+#planes .ageGrid .ageCard:nth-child(1) .ageSmall,
+#planes .ageGrid .ageCard:nth-child(1) .ageName,
+#planes .ageGrid .ageCard:nth-child(1) .ageDesc{
+  color:#142015;               /* texto negro */
+}
+
+/* 2) SEGUNDO CUADRO → GRIS normal (sin brillo, sin gradiente) */
+#planes .ageGrid .ageCard:nth-child(2){
+  background:#CFCECC;          /* gris normal */
+  border-color: rgba(0,0,0,.08);
+}
+#planes .ageGrid .ageCard:nth-child(2) .ageSmall,
+#planes .ageGrid .ageCard:nth-child(2) .ageName,
+#planes .ageGrid .ageCard:nth-child(2) .ageDesc{
+  color:#142015;               /* texto negro */
+}
+
+/* 3) TERCER CUADRO → BLANCO normal */
+#planes .ageGrid .ageCard:nth-child(3){
+  background:#ffffff;
+  border-color: rgba(0,0,0,.08);
+}
+#planes .ageGrid .ageCard:nth-child(3) .ageSmall,
+#planes .ageGrid .ageCard:nth-child(3) .ageName,
+#planes .ageGrid .ageCard:nth-child(3) .ageDesc{
+  color:#142015;               /* texto negro */
+}
+
+/* El botón + siempre verde (igual en los 3) */
+#planes .agePlus{
+  background: linear-gradient(135deg,var(--green2),var(--green));
+  color:#fff;
+}
+
+/* ==============================
+   WHY – tarjetas más largas, grises y con estrellas
+   ============================== */
+
+#why .whyCard{
+  background: #e0e0de;          /* gris normal */
+  box-shadow: none;             /* sin brillo */
+  border: 1px solid #cfcfcf;
+  padding: 26px 22px;
+  min-height: 260px;            /* más larguitas */
+  text-align: left;
+}
+
+#why .whyTitle{
+  font-size: 20px;
+  font-weight: 950;
+  color: #142015;               /* negro */
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* Quitamos cualquier icono si queda */
+#why .whyIcon{
+  display: none;
+}
+
+/* Lista con estrellas */
+#why .whyList{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#why .whyList li{
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #142015;               /* negro */
+  line-height: 1.5;
+}
+
+/* ⭐ estrella */
+#why .whyList li::before{
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green2);         /* verde bonito */
+  font-size: 16px;
+}

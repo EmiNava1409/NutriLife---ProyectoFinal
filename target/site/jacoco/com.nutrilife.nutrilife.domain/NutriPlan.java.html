@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>NutriPlan.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">NUTRIlife</a> &gt; <a href="index.source.html" class="el_package">com.nutrilife.nutrilife.domain</a> &gt; <span class="el_source">NutriPlan.java</span></div><h1>NutriPlan.java</h1><pre class="source lang-java linenums">package com.nutrilife.nutrilife.domain;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = &quot;nutri_plans&quot;)
+public class NutriPlan {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
+
+  @NotBlank
+  @Column(nullable = false)
+  private String name;
+
+  @NotBlank
+  @Column(nullable = false)
+  private String goal;
+
+  @NotNull
+  @Min(800)
+  @Max(6000)
+  @Column(name = &quot;calories_per_day&quot;, nullable = false)
+  private Integer caloriesPerDay;
+
+  @NotNull
+  @Min(1)
+  @Max(31)
+  @Column(nullable = false)
+  private Integer days;
+
+<span class="fc" id="L36">  @ElementCollection</span>
+  @CollectionTable(name = &quot;nutri_plan_meals&quot;, joinColumns = @JoinColumn(name = &quot;nutri_plan_id&quot;))
+  @Column(name = &quot;meal&quot;, nullable = false)
+  private List&lt;String&gt; meals = new ArrayList&lt;&gt;();
+
+  // UI helpers (front)
+  @Column(name = &quot;image_key&quot;)
+  private String imageKey;
+
+  @Column(name = &quot;tag&quot;)
+  private String tag;
+
+<span class="fc" id="L48">  public NutriPlan() {}</span>
+
+<span class="fc" id="L50">  public NutriPlan(Long id, String name, String goal, Integer caloriesPerDay, Integer days, List&lt;String&gt; meals, String imageKey, String tag) {</span>
+<span class="fc" id="L51">    this.id = id;</span>
+<span class="fc" id="L52">    this.name = name;</span>
+<span class="fc" id="L53">    this.goal = goal;</span>
+<span class="fc" id="L54">    this.caloriesPerDay = caloriesPerDay;</span>
+<span class="fc" id="L55">    this.days = days;</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">    this.meals = meals == null ? new ArrayList&lt;&gt;() : meals;</span>
+<span class="fc" id="L57">    this.imageKey = imageKey;</span>
+<span class="fc" id="L58">    this.tag = tag;</span>
+<span class="fc" id="L59">  }</span>
+
+<span class="fc" id="L61">  public Long getId() { return id; }</span>
+<span class="fc" id="L62">  public void setId(Long id) { this.id = id; }</span>
+
+<span class="fc" id="L64">  public String getName() { return name; }</span>
+<span class="fc" id="L65">  public void setName(String name) { this.name = name; }</span>
+
+<span class="fc" id="L67">  public String getGoal() { return goal; }</span>
+<span class="fc" id="L68">  public void setGoal(String goal) { this.goal = goal; }</span>
+
+<span class="fc" id="L70">  public Integer getCaloriesPerDay() { return caloriesPerDay; }</span>
+<span class="fc" id="L71">  public void setCaloriesPerDay(Integer caloriesPerDay) { this.caloriesPerDay = caloriesPerDay; }</span>
+
+<span class="fc" id="L73">  public Integer getDays() { return days; }</span>
+<span class="fc" id="L74">  public void setDays(Integer days) { this.days = days; }</span>
+
+<span class="fc" id="L76">  public List&lt;String&gt; getMeals() { return meals; }</span>
+<span class="pc bpc" id="L77" title="1 of 2 branches missed.">  public void setMeals(List&lt;String&gt; meals) { this.meals = meals == null ? new ArrayList&lt;&gt;() : meals; }</span>
+
+<span class="fc" id="L79">  public String getImageKey() { return imageKey; }</span>
+<span class="fc" id="L80">  public void setImageKey(String imageKey) { this.imageKey = imageKey; }</span>
+
+<span class="fc" id="L82">  public String getTag() { return tag; }</span>
+<span class="fc" id="L83">  public void setTag(String tag) { this.tag = tag; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

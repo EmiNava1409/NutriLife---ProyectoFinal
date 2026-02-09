@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NUTRIlife · Planes de comida saludables</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+<header class="topbar">
+  <div class="container topbar__inner">
+    <div class="brand">
+      <span class="brand__mark">N</span>
+      <span class="brand__name">NUTRIlife</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#menu">Menú</a>
+      <a href="#why">¿Por qué elegirnos?</a>
+      <a href="#planes">Planes</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="inicio" class="heroFoodezza heroFoodezza--clean">
+    <div class="container heroFoodezza__inner">
+
+      <div class="heroLeft">
+        <div class="heroKicker">🌿 Planes saludables con Karolayn y Emilia</div>
+
+        <h1 class="heroTitle">
+          Come saludable<br>
+          Vive mejor con <span class="heroBrandSmall">NUTRIlife</span>
+        </h1>
+
+        <p class="heroText">
+          Descubre planes de comida pensados para objetivos reales que te ayuden a sentirte mejor,
+          rendir más y mantener hábitos saludables.
+        </p>
+
+        <div class="heroChips" aria-label="Categorías">
+          <span class="heroChip">Sin carne</span>
+          <span class="heroChip">Bajo sodio</span>
+          <span class="heroChip">Alta fibra</span>
+          <span class="heroChip">Low carb</span>
+          <span class="heroChip">Fitness</span>
+        </div>
+      </div>
+
+      <div class="heroRight" aria-hidden="true">
+        <div class="heroPanel heroPanel--glass">
+          <div class="heroImageWrap heroImageWrap--round">
+            <img id="heroImg" alt="Plato saludable">
+          </div>
+
+          <div class="heroMiniRow heroMiniRow--fancy">
+            <span class="dot dot--active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <section id="menu" class="section sectionSoft">
+    <div class="container">
+      <div class="sectionHead">
+        <h2>Menú saludable</h2>
+      </div>
+
+      <div id="menuGrid" class="menuGrid"></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="section">
+    <div class="container">
+      <h2 class="centerTitle">¿POR QUÉ ELEGIR NUTRIlife?</h2>
+
+      <div class="whyGrid">
+        <div class="whyCard">
+          <div class="whyTitle">Comida saludable</div>
+          <ul class="whyList">
+            <li>Ingredientes frescos y naturales</li>
+            <li>Balance entre proteínas, fibra y energía</li>
+            <li>Planes fáciles de mantener en el tiempo</li>
+          </ul>
+
+        </div>
+        <div class="whyCard">
+          <div class="whyTitle">Calidad y claridad</div>
+          <ul class="whyList">
+            <li>Información clara y sin términos raros</li>
+            <li>Objetivo, duración y comidas visibles</li>
+            <li>Sabes exactamente qué vas a comer</li>
+          </ul>
+        </div>
+
+        <div class="whyCard">
+          <div class="whyTitle">Elección rápida</div>
+          <ul class="whyList">
+            <li>Decides en segundos</li>
+            <li>Planes fáciles de comparar</li>
+            <li>Un clic y ves el detalle completo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES POR EDAD -->
+  <section id="planes" class="section sectionSoft">
+    <div class="container">
+      <div class="head">
+        <h2>Planes por edad</h2>
+        <p class="muted">
+          Planes alimenticios adaptados a distintas edades, enfocados en una nutrición adecuada,
+          balanceada y acorde a las necesidades de cada persona.
+        </p>
+      </div>
+
+      <div id="ageGrid" class="ageGrid"></div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__backdrop" data-close="1"></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="modal__close" type="button" data-close="1" aria-label="Cerrar">✕</button>
+
+    <div class="modal__media">
+      <div class="modal__plate">
+        <img id="mImg" src="" alt="">
+      </div>
+    </div>
+
+    <div class="modal__body">
+      <div class="badge" id="mTag"></div>
+      <h3 class="modal__title" id="mTitle"></h3>
+      <p class="modal__goal" id="mGoal"></p>
+
+      <div class="meta" id="mMeta"></div>
+
+      <h4 class="modal__h">Comidas sugeridas</h4>
+      <ul class="modal__list" id="mMeals"></ul>
+
+      <div class="modal__footer">
+        <button class="btn btn--primary" type="button" data-close="1">Listo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>© <span id="year"></span> NUTRIlife</div>
+    <div class="muted">Planes de comida saludables</div>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>

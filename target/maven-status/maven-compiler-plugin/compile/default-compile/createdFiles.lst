@@ -1,0 +1,6 @@
+com\nutrilife\nutrilife\domain\NutriPlan.class
+com\nutrilife\nutrilife\repository\NutriPlanRepository.class
+com\nutrilife\nutrilife\controller\NutriPlanController.class
+com\nutrilife\nutrilife\controller\ApiExceptionHandler.class
+com\nutrilife\nutrilife\NutrilifeApplication.class
+com\nutrilife\nutrilife\service\NutriPlanService.class

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nutrilife.nutrilife.controller.NutriPlanControllerTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.95 s -- in com.nutrilife.nutrilife.controller.NutriPlanControllerTest
