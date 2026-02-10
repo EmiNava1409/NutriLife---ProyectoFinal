@@ -1,3 +1,7 @@
+## Proyecto desarrollado por:
+Karolayn Buñay
+Emilia Navarrete
+
 # NUTRIlife (Proyecto completo: API + Front)
 
 Este proyecto ya está **completo**: incluye **API REST CRUD**, **base de datos H2**, **6 planes precargados** y **frontend con diseño**.
